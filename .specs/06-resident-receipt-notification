@@ -1,0 +1,45 @@
+# Resident receives notification when admin confirms receipt
+
+## Description
+
+Resident receives an in-app notification when an admin confirms receipt of their kite request, providing transparency that their request has been seen.
+
+## Notification System
+
+-   In-app notifications only (no email/SMS in MVP)
+-   Notifications displayed on a dedicated notifications page/inbox
+-   Notifications are not immediate - populated when resident visits the page (when DB is queried)
+
+## Notification Content
+
+The notification should state:
+
+-   "Your kite for [Program Name] has been acknowledged by an administrator"
+
+No additional information, timestamps, or actions required from resident.
+
+## User Experience
+
+-   Resident navigates to notifications page to view all notifications
+-   No manual marking as read/unread in MVP
+-   No visual distinction between new and viewed notifications in MVP
+-   All notifications appear with same styling
+-   No actions required from resident (informational only)
+
+## Business Rules
+
+-   Notification created when admin confirms receipt of kite
+-   Notifications do not expire or get archived
+-   Notifications persist indefinitely (relates to notification history feature)
+
+## Notes
+
+-   Provides transparency to residents that their request was received
+-   Sets expectation that their kite is being processed
+-   Part of the trust-building workflow to replace opaque paper kite system
+
+## Future Enhancements
+
+-   Auto-mark notifications as viewed when scrolled into viewport
+-   New notifications appear highlighted/bold, viewed notifications appear regular/gray
+-   Visual distinction helps residents identify what's new at a glance

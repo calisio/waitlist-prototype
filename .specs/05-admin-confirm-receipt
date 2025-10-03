@@ -1,0 +1,45 @@
+# Admin confirms receipt of kite
+
+## Description
+
+Admin acknowledges that they have received and viewed a resident's kite request. This is the first step in processing a kite before approving it for the waitlist.
+
+## User Flow
+
+1. Admin views kite in the pending kites list
+2. Admin clicks "Confirm Viewed" button on the kite
+3. Status badge updates from "Pending" to "Confirmed"
+4. Button changes to reflect next available action
+5. Visual styling changes to indicate different state
+6. Resident receives notification (separate feature)
+
+## Action Details
+
+-   **Button label**: "Confirm Viewed" (or similar simple language)
+-   **Interaction**: Single click, no confirmation dialog needed
+-   **Processing**: One kite at a time (no bulk actions)
+
+## What Changes After Confirmation
+
+-   Status badge updates: "Pending" → "Confirmed"
+-   Button changes to next action (approve/add to waitlist)
+-   Visual styling updates to distinguish confirmed kites from pending ones
+-   Kite remains in same position in the list (does not move or reorder)
+
+## Business Rules
+
+-   One-way action (cannot be undone/un-confirmed)
+-   No additional input required from admin (just button click)
+-   Triggers notification to resident that their kite was received
+
+## UI Requirements
+
+-   Clear visual distinction between pending and confirmed kites
+-   Button state clearly indicates next available action after confirmation
+-   Smooth transition without disrupting list order or admin's place in the workflow
+
+## Notes
+
+-   This acknowledgment step provides transparency to residents that their request was seen
+-   Separates "we received your request" from "we're adding you to the waitlist"
+-   Allows admin to batch-review kites before deciding on approvals

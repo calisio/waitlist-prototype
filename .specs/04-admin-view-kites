@@ -1,0 +1,72 @@
+# Admin views received kites
+
+## Description
+
+Admin can view all pending kite requests for a specific program, allowing them to see and process incoming requests from residents who want to join the program's waitlist.
+
+## Location & Layout
+
+-   Displayed on the program detail page (same page as enrollment list and waitlist)
+-   Positioned in a separate section on the right side of the page
+-   Enrollment list and waitlist displayed on the left side
+-   Prominent placement ensures admin sees and reviews pending kites
+
+## Data Displayed - Pending Kites
+
+For each kite, show:
+
+-   Status badge (Pending or Confirmed)
+-   Resident name
+-   Resident ID number
+-   Timestamp (when kite was submitted)
+-   Optional note (if resident provided additional context)
+-   Visual indicator for kites waiting 7+ days (badge/alert)
+
+## Ordering & Organization
+
+-   All kites displayed in a single list (not separated by status)
+-   Kites displayed newest first (most recent at top)
+-   All kites shown for the current program only
+-   Sorted by timestamp descending
+
+## Visual Indicators
+
+-   Status badge shows current state: "Pending" or "Confirmed"
+-   Kites older than 7 days display a warning badge/alert (e.g., "⚠️ 7 days old")
+-   Helps prevent older requests from being forgotten
+
+## Kite States
+
+Kites in this view can be in two states:
+
+-   **Pending**: Waiting for admin to confirm receipt
+-   **Confirmed**: Admin has acknowledged receipt, waiting for approval/denial
+
+Both states remain in the same list - status badge updates when admin confirms receipt.
+
+## Business Rules
+
+-   Only shows unprocessed kites (pending and confirmed)
+-   Once kite is approved, it is removed from this section and resident appears on the waitlist
+-   Once kite is denied, it is removed from this view
+-   No history view in MVP (future enhancement)
+
+## Actions Available
+
+-   Admin can confirm receipt of kite
+-   Admin can approve kite to add resident to waitlist
+-   Process kites one at a time (no bulk actions in MVP)
+-   Kite remains in same position in list when status changes from Pending to Confirmed
+
+## Notes
+
+-   Single list approach allows admin to process kite from start to finish without hunting between sections
+-   This view is specific to each program (kites shown per program page)
+-   Combines visibility with actionability - admin can see and act on kites in one place
+
+## Future Enhancements to Consider
+
+-   View history of processed kites (approved/denied)
+-   Bulk confirmation actions
+-   Filter by status (pending vs confirmed)
+-   Deny/reject kite functionality

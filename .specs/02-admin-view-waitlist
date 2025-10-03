@@ -1,0 +1,40 @@
+# Admin views waitlist for each program
+
+## Description
+
+Admin can view a list of all residents on the waitlist for a specific program, displayed on the same page as the enrollment list.
+
+## Location
+
+-   Displayed on program detail page, below the enrollment list
+-   Clear visual separator between "Currently Enrolled" and "Waitlist" sections
+-   Different styling to distinguish waitlist from enrollment list
+
+## Data Displayed - Waitlisted Residents
+
+For each waitlisted resident, show:
+
+-   Waitlist position number (#1, #2, #3, etc.)
+-   Resident name
+-   Resident ID number
+-   Date requested (date they sent the kite/requested to join waitlist)
+-   Notes field (for admin use - editable text field for contextual information)
+
+## Ordering
+
+-   Default order: Date requested (first-come-first-served by kite submission date)
+-   No automatic sorting by other criteria in MVP
+-   Manual reordering enabled in Feature 15
+
+## UI Requirements
+
+-   Simple list view (read-only in this feature)
+-   Visual separator and distinct styling from enrollment section above
+-   Support for long lists (1-150 residents possible)
+-   Position numbers update dynamically to reflect current order
+
+## Notes
+
+-   Read-only view (no editing, removing, or reordering in this feature)
+-   Removal capability added in Feature 14
+-   Manual reordering capability added in Feature 15

@@ -1,0 +1,55 @@
+# Resident receives notification when added to waitlist
+
+## Description
+
+Resident receives an in-app notification when an admin approves their kite and adds them to a program's waitlist, informing them of their new waitlist status and position.
+
+## Notification System
+
+-   In-app notifications only (no email/SMS in MVP)
+-   Notifications displayed on dedicated notifications page/inbox
+-   Notifications are not immediate - populated when resident visits the page (when DB is queried)
+
+## Notification Content
+
+The notification should state:
+
+-   "You have been added to the waitlist for [Program Name]. You are #[Position] on the waitlist."
+
+Example: "You have been added to the waitlist for GED Program. You are #12 on the waitlist."
+
+## Special Case: Direct Approval from Pending State
+
+If admin approves a kite that was still in "Pending" state (skipped confirmation), resident receives **two separate notifications**:
+
+1. "Your kite for [Program Name] has been acknowledged by an administrator"
+2. "You have been added to the waitlist for [Program Name]. You are #[Position] on the waitlist."
+
+Both notifications appear as distinct entries in the notifications inbox.
+
+## User Experience
+
+-   Resident navigates to notifications page to view notification
+-   No manual marking as read/unread in MVP
+-   No visual distinction between new and viewed notifications in MVP
+-   All notifications appear with same styling
+-   No actions required from resident (informational only)
+
+## Business Rules
+
+-   Notification created when admin approves kite and adds resident to waitlist
+-   Position number reflects resident's current position at time of notification creation
+-   Notifications do not expire or get archived
+-   Notifications persist indefinitely
+
+## Notes
+
+-   Provides confirmation that kite was not only received but acted upon
+-   Transparency about waitlist position helps manage expectations
+-   Part of trust-building to replace opaque paper system
+
+## Future Enhancements
+
+-   Auto-mark notifications as viewed when scrolled into viewport
+-   New notifications appear highlighted/bold, viewed notifications appear regular/gray
+-   Link to view current waitlist position (may have changed since notification)

@@ -1,0 +1,50 @@
+# Resident sends a kite
+
+## Description
+
+Resident can browse available programs and send a kite (request) to join a program's waitlist. The system captures their information and timestamp automatically.
+
+## User Flow
+
+1. Resident views a list of available programs
+2. Resident finds a program they're interested in
+3. Resident clicks a button to send a kite for that program
+4. (Optional) Resident can include a note with additional context
+5. System automatically captures: resident name, ID number, and timestamp
+6. Resident sees confirmation that kite was sent successfully
+
+## Data Captured
+
+**Automatically captured:**
+
+-   Resident name
+-   Resident ID number
+-   Timestamp (when button was clicked)
+
+**Optional resident input:**
+
+-   Note/message field for reason for interest, prerequisites completed, expected release date, or other context for admin
+
+## Button States
+
+The action button for each program should display different states:
+
+-   **"Send Kite" (enabled)**: Resident has never requested this program and is not enrolled
+-   **"Pending" (pill/disabled)**: Resident has sent a kite that hasn't been approved or denied yet
+-   **"Enrolled" (pill/disabled)**: Resident is already enrolled in this program
+
+## Business Rules
+
+-   Resident can send kites for multiple programs simultaneously
+-   Resident cannot send duplicate kites for the same program (button disabled if kite is pending)
+-   Resident cannot send kite for programs they're already enrolled in (button disabled/replaced)
+-   No limit on number of programs a resident can request
+
+## Confirmation
+
+-   Immediate confirmation message displayed when kite is successfully sent
+
+## Notes
+
+-   Program list comes from existing programs in the system (same programs admins manage)
+-   This is the resident's self-service equivalent to the traditional paper kite system

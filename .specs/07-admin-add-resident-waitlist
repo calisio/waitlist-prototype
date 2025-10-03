@@ -1,0 +1,61 @@
+# Admin approves kite (adds resident to waitlist)
+
+## Description
+
+Admin approves a resident's kite request and adds them to the program's waitlist. This is the final step in processing a kite and moves the resident from the pending kites section to the waitlist.
+
+## User Flow
+
+1. Admin reviews kite in the kites list (can be in "Pending" or "Confirmed" state)
+2. Admin clicks "Add to Waitlist" button
+3. Kite is removed from the kites list
+4. Resident is added to the waitlist section (below enrollment list)
+5. Resident receives notification(s)
+
+## Action Details
+
+-   **Button label**: "Add to Waitlist"
+-   **Interaction**: Single click, no confirmation dialog in MVP
+-   **Can approve from any state**: Admin can add to waitlist directly from "Pending" state (doesn't have to confirm receipt first)
+
+## What Happens After Approval
+
+-   Kite disappears from kites section
+-   Resident appears in waitlist section with:
+    -   Position number (assigned based on placement)
+    -   Resident name
+    -   Resident ID number
+    -   Date requested (original kite submission timestamp)
+    -   Notes field (carries over the optional note from kite)
+
+## Waitlist Placement
+
+-   Resident is added to the **bottom of the waitlist** (last position)
+-   Position numbers update automatically for all waitlist members
+
+## Notifications Triggered
+
+-   If kite was in "Pending" state when approved: Send **both** notifications
+    -   "Your kite has been acknowledged"
+    -   "You have been added to the waitlist"
+-   If kite was in "Confirmed" state when approved: Send only
+    -   "You have been added to the waitlist"
+
+## Business Rules
+
+-   No capacity limit for waitlist (unlimited waitlist size)
+-   Program enrollment has capacity (30-60 spots), but waitlist does not
+-   Approval can be undone by removing resident from waitlist (separate feature)
+-   Admin note from kite is preserved and visible in waitlist view
+
+## Notes
+
+-   Completes the kite-to-waitlist pipeline
+-   Provides flexibility for admin to skip confirmation step if needed
+-   Note preservation maintains context throughout the process
+
+## Future Enhancements
+
+-   Confirmation dialog before approval to prevent accidental clicks
+-   Bulk approval actions
+-   Deny/reject kite option (vs only approve)

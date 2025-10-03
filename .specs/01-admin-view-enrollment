@@ -1,0 +1,35 @@
+# Feature 1: Admin views current enrollment list for each program
+
+## Description
+
+Admin can view a list of all residents currently enrolled in a specific program, including enrollment details and program capacity information.
+
+## User Flow
+
+1. Admin sees a list of all programs
+2. Admin clicks on a program
+3. Admin is taken to a program detail page showing:
+    - Program capacity (e.g., "15/30 spots filled")
+    - List of currently enrolled residents
+    - Waitlist (below enrollment list)
+
+## Data Displayed - Enrolled Residents
+
+For each enrolled resident, show:
+
+-   Resident name
+-   Resident ID number
+-   Enrollment date (date they started the program)
+
+## UI Requirements
+
+-   Simple list view (no sorting/filtering in MVP)
+-   Display enrollment list above waitlist on the same page
+-   Program capacity clearly visible (X/Y format where Y is max capacity)
+-   Max capacity range: 30-60 students per program
+
+## Notes
+
+-   Read-only view (no editing capability in this feature)
+-   Completion/end dates not included in MVP
+-   Additional resident attributes (housing unit, release date, etc.) deferred to future enhancement
