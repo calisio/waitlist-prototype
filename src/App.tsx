@@ -17,7 +17,7 @@ function App() {
     const [residentPage, setResidentPage] = useState<ResidentPage>('programs');
 
     return (
-        <div className="min-h-screen bg-gray-100">
+        <div className="min-h-screen w-full bg-gray-50">
             {/* Top Navigation Tabs */}
             <div className="bg-white border-b border-gray-300 shadow-sm">
                 <div className="px-4 sm:px-6 lg:px-8">
@@ -50,7 +50,7 @@ function App() {
 
             {/* Admin View */}
             {currentView === 'admin' && (
-                <div>
+                <div className="w-full">
                     {/* Admin Sub-Navigation */}
                     <div className="bg-gray-50 border-b border-gray-200">
                         <div className="px-4 sm:px-6 lg:px-8">
@@ -80,14 +80,16 @@ function App() {
                     </div>
 
                     {/* Admin Content */}
-                    {adminPage === 'list' && <AdminProgramList />}
-                    {adminPage === 'detail' && <AdminProgramDetail />}
+                    <div className="w-full">
+                        {adminPage === 'list' && <AdminProgramList />}
+                        {adminPage === 'detail' && <AdminProgramDetail />}
+                    </div>
                 </div>
             )}
 
             {/* Resident View */}
             {currentView === 'resident' && (
-                <div>
+                <div className="w-full">
                     {/* Resident Sub-Navigation */}
                     <div className="bg-gray-50 border-b border-gray-200">
                         <div className="px-4 sm:px-6 lg:px-8">
@@ -119,10 +121,12 @@ function App() {
                     </div>
 
                     {/* Resident Content */}
-                    {residentPage === 'programs' && <ResidentPrograms />}
-                    {residentPage === 'notifications' && (
-                        <ResidentNotifications />
-                    )}
+                    <div className="w-full">
+                        {residentPage === 'programs' && <ResidentPrograms />}
+                        {residentPage === 'notifications' && (
+                            <ResidentNotifications />
+                        )}
+                    </div>
                 </div>
             )}
         </div>
